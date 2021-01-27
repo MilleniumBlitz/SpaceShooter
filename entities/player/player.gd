@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var health = 3
+
 const SPEED = 200
 
 var motion = Vector2()

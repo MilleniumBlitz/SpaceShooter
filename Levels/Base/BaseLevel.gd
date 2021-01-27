@@ -18,4 +18,4 @@ func _process(delta):
 		if $Enemies.get_child_count() == 0:
 			over = true
 			print("Victoire")
-			$EndMenu.visible = true
+			$CanvasLayer/EndMenu.visible = true

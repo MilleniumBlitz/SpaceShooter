@@ -11,5 +11,3 @@ func _on_SelectionBtn_pressed():
 #CLOSE THE GAME
 func _on_LeaveBtn_pressed():
 	get_tree().quit()
-
-
