@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name Ennemy
 
 export(float) var speed = 200
 

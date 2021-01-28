@@ -17,5 +17,13 @@ func _process(delta):
 	if over == false:
 		if $Enemies.get_child_count() == 0:
 			over = true
-			print("Victoire")
-			$CanvasLayer/EndMenu.visible = true
+			print("VICTORY")
+			get_tree().change_scene("res://Menu/End/EndMenu.tscn")
+
+
+func _on_EndArea_area_entered(area):
+	
+	if area is Ennemy:
+		print("FAIL")
+		print("GAME OVER")
+		get_tree().change_scene("res://Menu/End/EndMenu.tscn")

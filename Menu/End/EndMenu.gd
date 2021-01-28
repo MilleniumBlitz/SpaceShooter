@@ -1,13 +1,11 @@
-extends CenterContainer
+extends SimpleMenu
 
-#RESTART THE LEVEL
-func _on_RestartBtn_pressed():
-	get_tree().reload_current_scene()
-
-#GO TO THE SELECTION MENU
-func _on_SelectionBtn_pressed():
-	get_tree().change_scene("res://Menu/LevelSelectionMenu/LevelSelectionMenu.tscn")
-
-#CLOSE THE GAME
-func _on_LeaveBtn_pressed():
-	get_tree().quit()
+func _on_item_selected(value):
+	match value:
+		0:
+			#RESTART
+			get_tree().change_scene("res://Levels/Level1.tscn")
+			
+		1:
+			#QUIT
+			get_tree().quit()

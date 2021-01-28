@@ -18,7 +18,6 @@ func update_menu():
 	items = []
 	for c in get_children():
 		if c is SimpleMenuItem:
-			print("ototo")
 			if c.selectable:
 				items.append( c )
 				c.modulate.a = UNSELECTED_ITEM_OPACITY
