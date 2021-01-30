@@ -1,18 +1,30 @@
 extends Control
 
+onready var health_bar_empty = preload("res://sprite/UI/HealthBar/health_empty.png")
+onready var health_bar_full = preload("res://sprite/UI/HealthBar/health_full.png")
 
-var health
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	PlayerStats.connect("health_changed", self, "set_health")
-	pass # Replace with function body.
 	
-func set_health(value):
-	$Label.text = str(value)
+	#CREATION D'UN NOUVEL EMPLACEMENT DE VIE
+	# ICI LA MAX HEALTH
+	var position = Vector2(30,30)
+	for i in range(3):
+		
+		var health_view = Sprite.new()
+		health_view.name = "HealthBar" + str(i)
+		health_view.texture = health_bar_full
+		health_view.position = position
+		add_child(health_view)
+		
+		position.x += 20
+	
+	#CONNEXION AU MANAGER DE NIVEAU
+#	LevelManager.connect("health_changed", self, "set_health")
+	
+func player_hit(health):
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var toto = get_child(health)
+	print("oui")
+	print(health)
+	print(toto.name)
+	toto.texture = health_bar_empty

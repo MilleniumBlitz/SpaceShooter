@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
-var health = 3
-
-const SPEED = 200
+const SPEED = 5
 
 var motion = Vector2()
 var input_direction = Vector2()
@@ -35,4 +33,4 @@ func _physics_process(delta):
 	input_direction = Vector2(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
 				int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up")))
 				
-	global_position +=  input_direction.normalized() * SPEED * delta
+	global_position +=  input_direction.normalized() * SPEED

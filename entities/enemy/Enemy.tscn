@@ -9,6 +9,8 @@ extents = Vector2( 15, 20 )
 [node name="Enemy" type="Area2D"]
 rotation = 1.5708
 script = ExtResource( 2 )
+speed = 2.0
+fire_rate = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -17,7 +19,6 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="FireRateTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="ShootingPoint" type="Position2D" parent="."]

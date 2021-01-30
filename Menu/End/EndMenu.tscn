@@ -14,6 +14,17 @@ margin_top = -2.11893
 margin_right = 1281.12
 margin_bottom = 717.881
 
+[node name="Label" type="Label" parent="."]
+margin_left = 641.447
+margin_top = 176.398
+margin_right = 757.447
+margin_bottom = 190.398
+custom_fonts/font = ExtResource( 2 )
+text = "VICTOIRE/DEFAITE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Restart" type="Node2D" parent="."]
 script = ExtResource( 4 )
 

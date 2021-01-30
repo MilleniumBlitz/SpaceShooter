@@ -21,10 +21,10 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="LeftShooting" type="Position2D" parent="."]
-position = Vector2( -15, -10 )
+position = Vector2( -20, -15 )
 
 [node name="RightShooting" type="Position2D" parent="."]
-position = Vector2( 15, -10 )
+position = Vector2( 20, -15 )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true

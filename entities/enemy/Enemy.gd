@@ -8,6 +8,8 @@ onready var shoot_cooldown = $FireRateTimer
 
 var bullet = preload("res://bullet.tscn")
 
+signal enemy_dead
+
 func _physics_process(delta):
 	
 	if shoot_cooldown.is_stopped():
@@ -20,14 +22,17 @@ func _physics_process(delta):
 		get_tree().current_scene.add_child(new_bullet)
 	
 	# MOVEMENT TO THE LEFT
-	global_position.x -= speed * delta
+	global_position.x -= speed
 
 
 func _on_Enemy_body_shape_entered(body_id, body, body_shape, area_shape):
+	
+	# LE JOUEUR PERCUTE L'ENNEMI
+	print("percute")
 	queue_free()
-	pass # Replace with function body.
-
-
+	
 func _on_Enemy_area_shape_entered(area_id, area, area_shape, self_shape):
+	
+	# A PLAYER BULLET HIT THE ENEMY
 	queue_free()
-	pass # Replace with function body.
+	emit_signal("enemy_dead", get_tree().get_root())

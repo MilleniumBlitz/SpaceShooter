@@ -6,4 +6,5 @@
 [node name="Level1" instance=ExtResource( 2 )]
 
 [node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 1 )]
-position = Vector2( 1118.6, 197.556 )
+position = Vector2( 659.415, 213.574 )
+speed = 1.0
