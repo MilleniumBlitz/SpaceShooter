@@ -10,21 +10,19 @@ func _ready():
 	for enemy in $Enemies.get_children():
 		enemy.connect("enemy_dead", self, "enemy_dead")
 		enemy.connect("enemy_escaped", self, "enemy_escaped")
+		enemy.connect("enemy_crashed", self, "enemy_crashed")
 	
 func enemy_dead():
-	print(" un ennemi est mort ")
+
+	#UN ENNEMI EST TUE PAR LE JOUEUR
 	nbr_dead_enemies += 1
 	if number_of_enemies_to_kill == nbr_dead_enemies:
-		print("VICTORY")
-#		LevelManager.game_over(1)
+		LevelManager.game_over(1)
 
 func enemy_escaped():
-	print(" un ennemi s'échape ")
 	#RETIRER UNE VIE AU JOUEUR
 	LevelManager.hit_player()
-		
-func _on_EndArea_area_entered(area):
-	pass
-#	if area is Ennemy:
-#		#TOUCHER LE JOUEUR ICI / HIT POUR LUI ENLEVER UNE VIE
-#		LevelManager.hit_player()
+
+func enemy_crashed():
+	#LE JOUEUR A PERCUTE UN ENNEMI
+	LevelManager.hit_player()

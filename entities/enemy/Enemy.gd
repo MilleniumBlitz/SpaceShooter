@@ -3,6 +3,7 @@ class_name Ennemy
 
 signal enemy_dead()
 signal enemy_escaped()
+signal enemy_crashed()
 
 var bullet = preload("res://bullet.tscn")
 
@@ -27,7 +28,7 @@ func _physics_process(delta):
 func _on_Enemy_body_shape_entered(body_id, body, body_shape, area_shape):
 	
 	# LE JOUEUR PERCUTE L'ENNEMI
-	print("percute")
+	emit_signal("enemy_crashed")
 	queue_free()
 	
 func _on_Enemy_area_shape_entered(area_id, area, area_shape, self_shape):
@@ -38,8 +39,4 @@ func _on_Enemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	else:
 		#L'ENNEMI S'ECHAPE
 		emit_signal("enemy_escaped")
-#	queue_free()
-	
-	#L'ENNMI EST MORT
-#	
-#	
+	queue_free()

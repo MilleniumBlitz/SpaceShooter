@@ -29,4 +29,3 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 68.974, 102.272 )
-[connection signal="area_entered" from="EndArea" to="." method="_on_EndArea_area_entered"]
