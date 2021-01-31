@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://bullet.gd"
+}, {
+"base": "Area2D",
 "class": "Ennemy",
 "language": "GDScript",
 "path": "res://entities/enemy/Enemy.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://Menu/Scripts/SimpleMenuItem.gd"
 } ]
 _global_script_class_icons={
+"Bullet": "",
 "Ennemy": "",
 "SimpleMenu": "",
 "SimpleMenuItem": ""

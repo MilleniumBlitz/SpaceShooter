@@ -10,7 +10,6 @@ export var UNSELECTABLE_ITEM_OPACITY = 0.1
 
 signal selected_item
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	update_menu()
 	
@@ -34,12 +33,13 @@ func set_item():
 			items[idx].modulate.a = UNSELECTED_ITEM_OPACITY
 
 func _input(event):
+	
 	if event.is_action_pressed("ui_up"):
 		cur_item -= 1
 		if cur_item < 0: cur_item += items.size()
 		set_item()
-		#le truc précdéent
 		pass
+		
 	elif event.is_action_pressed("ui_down"):
 		cur_item += 1
 		if cur_item >= items.size(): cur_item -= items.size()
@@ -52,7 +52,3 @@ func _input(event):
 
 func _on_item_selected(value):
 	pass
-
-func _on_StartBtn_pressed():
-	get_tree().change_scene("res://Menu/LevelSelectionMenu/LevelSelectionMenu.tscn")
-	pass # Replace with function body.

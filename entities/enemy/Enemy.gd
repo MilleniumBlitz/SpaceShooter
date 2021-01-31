@@ -1,19 +1,19 @@
 extends Area2D
 class_name Ennemy
 
-export(float) var speed = 200
-
-export(float) var fire_rate = 0.4
-onready var shoot_cooldown = $FireRateTimer
+signal enemy_dead()
+signal enemy_escaped()
 
 var bullet = preload("res://bullet.tscn")
 
-signal enemy_dead
+onready var shoot_cooldown = $FireRateTimer
+
+var speed = 2
 
 func _physics_process(delta):
 	
 	if shoot_cooldown.is_stopped():
-		shoot_cooldown.start(fire_rate)
+		shoot_cooldown.start()
 
 		# SHOOT PROJECTILE
 		var new_bullet = bullet.instance()
@@ -24,7 +24,6 @@ func _physics_process(delta):
 	# MOVEMENT TO THE LEFT
 	global_position.x -= speed
 
-
 func _on_Enemy_body_shape_entered(body_id, body, body_shape, area_shape):
 	
 	# LE JOUEUR PERCUTE L'ENNEMI
@@ -33,6 +32,14 @@ func _on_Enemy_body_shape_entered(body_id, body, body_shape, area_shape):
 	
 func _on_Enemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	
-	# A PLAYER BULLET HIT THE ENEMY
-	queue_free()
-	emit_signal("enemy_dead", get_tree().get_root())
+	if area is Bullet:
+		#UNE BALLE DU JOUEUR TOUCHE L'ENNEMI / MORT
+		emit_signal("enemy_dead")
+	else:
+		#L'ENNEMI S'ECHAPE
+		emit_signal("enemy_escaped")
+#	queue_free()
+	
+	#L'ENNMI EST MORT
+#	
+#	

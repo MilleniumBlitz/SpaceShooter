@@ -9,16 +9,14 @@
 script = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
-margin_left = 1.12244
-margin_top = -2.11893
-margin_right = 1281.12
-margin_bottom = 717.881
+margin_right = 720.0
+margin_bottom = 480.0
 
 [node name="Label" type="Label" parent="."]
-margin_left = 641.447
-margin_top = 176.398
-margin_right = 757.447
-margin_bottom = 190.398
+margin_left = 157.858
+margin_top = 88.4877
+margin_right = 365.858
+margin_bottom = 106.488
 custom_fonts/font = ExtResource( 2 )
 text = "VICTOIRE/DEFAITE"
 __meta__ = {
@@ -26,13 +24,13 @@ __meta__ = {
 }
 
 [node name="Restart" type="Node2D" parent="."]
+position = Vector2( 147.462, 218.814 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Label" type="Label" parent="Restart"]
-margin_left = 596.728
-margin_top = 243.59
-margin_right = 722.728
-margin_bottom = 261.59
 custom_fonts/font = ExtResource( 2 )
 text = "REDEMARER"
 __meta__ = {
@@ -40,13 +38,13 @@ __meta__ = {
 }
 
 [node name="Quit" type="Node2D" parent="."]
+position = Vector2( 154.682, 271.223 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Label" type="Label" parent="Quit"]
-margin_left = 629.267
-margin_top = 334.087
-margin_right = 684.267
-margin_bottom = 348.087
 custom_fonts/font = ExtResource( 2 )
 text = "QUITTER"
 __meta__ = {
