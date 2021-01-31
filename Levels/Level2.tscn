@@ -1,21 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/enemy/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Level2.gd" type="Script" id=3]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Menu/End/EndMenu.tscn" type="PackedScene" id=5]
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
-
-[node name="EndMenu" parent="." instance=ExtResource( 5 )]
-margin_left = 11.3925
-margin_top = 13.755
-margin_right = 1291.39
-margin_bottom = 733.755
+margin_right = 720.0
+margin_bottom = 480.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130.255, 294.489 )
@@ -25,15 +20,9 @@ fire_rate = 0.1
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 622.261, 266.683 )
-speed = 50.0
-fire_rate = 2.0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 622.261, 162.412 )
-speed = 50.0
-fire_rate = 2.0
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 613.852, 61.5044 )
-speed = 50.0
-fire_rate = 2.0
