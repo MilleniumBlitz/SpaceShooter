@@ -4,7 +4,7 @@ extends Node
 #LE SCORE ?
 #VICTOIRE/DEFAITE
 var current_level
-
+var level_started = false
 var number_of_ennemies
 var nbr_dead_enemies = 0
 var health = 3
@@ -14,6 +14,7 @@ signal player_hit(health)
 var victory
 
 func start_level(level_number):
+	level_started = false
 	current_level = level_number
 	nbr_dead_enemies = 0
 	

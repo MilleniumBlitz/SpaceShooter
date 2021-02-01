@@ -4,7 +4,7 @@ onready var enemy = preload("res://entities/enemy/Enemy.tscn")
 onready var player = preload("res://entities/player/Player.tscn")
 
 func _on_IntroTimer_timeout():
-	
+	LevelManager.level_started = true
 	#SPAWN DES ENNEMIES
 	var p = Vector2(750,50)
 	for enemy_s in range(LevelManager.number_of_ennemies):

@@ -11,7 +11,7 @@ extents = Vector2( 10, 350 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Intro"
-length = 1.5
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Intro:modulate")
 tracks/0/interp = 1
@@ -20,7 +20,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 18.3792 ),
+"transitions": PoolRealArray( 31.9999, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
@@ -66,7 +66,7 @@ shape = SubResource( 1 )
 position = Vector2( 68.974, 102.272 )
 
 [node name="IntroTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 autostart = true
 

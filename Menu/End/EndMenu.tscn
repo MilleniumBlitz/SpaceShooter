@@ -5,12 +5,11 @@
 [ext_resource path="res://Menu/End/EndMenu.gd" type="Script" id=3]
 [ext_resource path="res://Menu/Scripts/SimpleMenuItem.gd" type="Script" id=4]
 
-[node name="EndMenu" type="Node2D"]
+[node name="EndMenu" type="CanvasLayer"]
 script = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
-margin_right = 720.0
-margin_bottom = 480.0
+margin_right = 6.10352e-05
 
 [node name="Label" type="Label" parent="."]
 margin_left = 157.858
@@ -23,44 +22,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Restart" type="Node2D" parent="."]
-position = Vector2( 147.462, 218.814 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="Restart"]
+[node name="Label2" type="Label" parent="."]
+margin_left = 147.462
+margin_top = 218.814
+margin_right = 273.462
+margin_bottom = 236.814
 custom_fonts/font = ExtResource( 2 )
 text = "REDEMARER"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Selection" type="Node2D" parent="."]
-position = Vector2( 183.682, 292.223 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="Selection"]
+[node name="Label3" type="Label" parent="."]
+margin_left = 183.682
+margin_top = 292.223
+margin_right = 297.682
+margin_bottom = 310.223
 custom_fonts/font = ExtResource( 2 )
 text = "SELECTION"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit" type="Node2D" parent="."]
-position = Vector2( 215.682, 365.223 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="Quit"]
+[node name="Label4" type="Label" parent="."]
+margin_left = 215.682
+margin_top = 365.223
+margin_right = 305.682
+margin_bottom = 383.223
 custom_fonts/font = ExtResource( 2 )
 text = "QUITTER"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

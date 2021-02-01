@@ -17,7 +17,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 
-	if Input.is_action_pressed("shoot")  and shoot_cooldown.is_stopped():
+	if Input.is_action_pressed("shoot")  and shoot_cooldown.is_stopped() and LevelManager.level_started:
 		shoot_cooldown.start(fire_rate)
 
 		#LEFT BULLET
