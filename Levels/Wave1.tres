@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Base/Wave.gd" type="Script" id=1]
+[ext_resource path="res://entities/enemy/Enemy.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ennemy_type = ExtResource( 2 )
+number_of_ennemies = 2

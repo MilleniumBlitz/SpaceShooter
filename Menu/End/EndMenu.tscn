@@ -37,8 +37,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Selection" type="Node2D" parent="."]
+position = Vector2( 183.682, 292.223 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Selection"]
+custom_fonts/font = ExtResource( 2 )
+text = "SELECTION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Quit" type="Node2D" parent="."]
-position = Vector2( 154.682, 271.223 )
+position = Vector2( 215.682, 365.223 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
