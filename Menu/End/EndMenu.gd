@@ -16,7 +16,7 @@ func _on_item_selected(value):
 			LevelManager.restart()
 			
 		1:
-			get_tree().change_scene("res://Menu/Selection/SlectionMenu.tscn")
+			get_tree().change_scene("res://Menu/Selection/SelectionMenu.tscn")
 			
 		2:
 			#QUIT

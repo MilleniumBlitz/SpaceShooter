@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Menu/Selection/SlectionMenu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/Selection/SelectionMenu.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Scripts/SimpleMenuItem.gd" type="Script" id=2]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://font.tres" type="DynamicFont" id=4]
