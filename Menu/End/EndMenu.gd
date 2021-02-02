@@ -3,10 +3,10 @@ extends SimpleMenu
 func _ready():
 	if LevelManager.victory:
 		#VICTOIRE
-		$Label.text = "VICTOIRE"
+		$Title.text = "VICTOIRE"
 	else:
 		#DEFAIE
-		$Label.text = "DEFAITE"
+		$Title.text = "DEFAITE"
 		
 
 func _on_item_selected(value):

@@ -3,7 +3,9 @@
 [ext_resource path="res://Menu/Selection/SelectionMenu.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Scripts/SimpleMenuItem.gd" type="Script" id=2]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=3]
-[ext_resource path="res://font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Font/MenuItem.tres" type="DynamicFont" id=4]
+
+
 
 [node name="SelectionMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
