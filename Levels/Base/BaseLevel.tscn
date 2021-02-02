@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Base/BaseLevel.gd" type="Script" id=1]
-[ext_resource path="res://Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tools/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Font/MenuItem.tres" type="DynamicFont" id=3]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=5]
-
-
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 350 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Intro"
@@ -34,8 +29,6 @@ script = ExtResource( 1 )
 margin_right = 720.0
 margin_bottom = 480.0
 
-[node name="Enemies" type="Node2D" parent="."]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 4 )]
@@ -57,12 +50,6 @@ text = "START"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="EndArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
-position = Vector2( 0, 366.251 )
-shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 68.974, 102.272 )

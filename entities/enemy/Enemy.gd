@@ -5,7 +5,7 @@ signal enemy_dead()
 signal enemy_escaped()
 signal enemy_crashed()
 
-var bullet = preload("res://bullet.tscn")
+var bullet = preload("res://entities/Bullet/Bullet.tscn")
 
 onready var shoot_cooldown = $FireRateTimer
 
@@ -29,14 +29,19 @@ func _on_Enemy_body_shape_entered(body_id, body, body_shape, area_shape):
 	
 	# LE JOUEUR PERCUTE L'ENNEMI
 	emit_signal("enemy_crashed")
-	queue_free()
+	destroy()
 	
 func _on_Enemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	
 	if area is Bullet:		
 		#UNE BALLE DU JOUEUR TOUCHE L'ENNEMI / MORT
 		emit_signal("enemy_dead")
-	else:
-		#L'ENNEMI S'ECHAPE
-		emit_signal("enemy_escaped")
+		destroy()
+
+func _on_VisibilityNotifier2D_screen_exited():
+	emit_signal("enemy_escaped")
+	destroy()
+	
+func destroy():
+	$VisibilityNotifier2D.disconnect("screen_exited", self, "_on_VisibilityNotifier2D_screen_exited")
 	queue_free()
