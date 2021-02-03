@@ -1,9 +1,9 @@
 extends Resource
 class_name Wave
 
-export(PackedScene) var ennemy_type
-export(int) var number_of_ennemies
+export(Resource) var enemy_type
+export(int) var number_of_enemies
 
-func _init(p_ennemy_type = "res://entities/enemy/Enemy.tscn", p_number_of_ennemies = 0):
-	ennemy_type = p_ennemy_type
-	number_of_ennemies = p_number_of_ennemies
+func _init(p_enemy_type = "", p_number_of_enemies = 0):
+	enemy_type = p_enemy_type
+	number_of_enemies = p_number_of_enemies

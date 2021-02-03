@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://entities/player/player.gd" type="Script" id=1]
+[ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprite/player/PlayerRed_Frame_01_png_processed.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -12,7 +12,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-fire_rate = 0.2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

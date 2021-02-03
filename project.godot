@@ -12,36 +12,42 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://entities/Bullet/Bullet.gd"
+"path": "res://entities/bullet/Bullet.gd"
 }, {
 "base": "Area2D",
-"class": "Ennemy",
+"class": "Enemy",
 "language": "GDScript",
 "path": "res://entities/enemy/Enemy.gd"
 }, {
 "base": "Resource",
+"class": "EnemyType",
+"language": "GDScript",
+"path": "res://entities/enemy/EnemyType.gd"
+}, {
+"base": "Resource",
 "class": "LevelStats",
 "language": "GDScript",
-"path": "res://Levels/Base/LevelStats.gd"
+"path": "res://levels/base/LevelStats.gd"
 }, {
 "base": "CanvasLayer",
 "class": "SimpleMenu",
 "language": "GDScript",
-"path": "res://Menu/Scripts/SimpleMenu.gd"
+"path": "res://menu/scripts/SimpleMenu.gd"
 }, {
 "base": "Node",
 "class": "SimpleMenuItem",
 "language": "GDScript",
-"path": "res://Menu/Scripts/SimpleMenuItem.gd"
+"path": "res://menu/scripts/SimpleMenuItem.gd"
 }, {
 "base": "Resource",
 "class": "Wave",
 "language": "GDScript",
-"path": "res://Levels/Base/Wave.gd"
+"path": "res://levels/base/Wave.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
-"Ennemy": "",
+"Enemy": "",
+"EnemyType": "",
 "LevelStats": "",
 "SimpleMenu": "",
 "SimpleMenuItem": "",
@@ -56,7 +62,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-LevelManager="*res://Levels/Scripts/LevelManager.gd"
+LevelManager="*res://levels/scripts/LevelManager.gd"
 
 [display]
 

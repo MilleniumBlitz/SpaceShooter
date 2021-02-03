@@ -10,10 +10,8 @@ onready var shoot_cooldown = $FireRateTimer
 onready var left_shooting_point = $LeftShooting
 onready var right_shooting_point = $RightShooting
 
-var bullet = preload("res://entities/Bullet/Bullet.tscn")
+var bullet = preload("res://entities/bullet/Bullet.tscn")
 
-func _unhandled_input(event):
-	pass
 
 func _physics_process(delta):
 
