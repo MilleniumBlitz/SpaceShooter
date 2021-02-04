@@ -12,7 +12,6 @@ onready var right_shooting_point = $RightShooting
 
 var bullet = preload("res://entities/bullet/Bullet.tscn")
 
-
 func _physics_process(delta):
 
 	if Input.is_action_pressed("shoot")  and shoot_cooldown.is_stopped() and LevelManager.level_started:
@@ -20,13 +19,13 @@ func _physics_process(delta):
 
 		#LEFT BULLET
 		var left_bullet = bullet.instance()	
-		left_bullet.direction = Vector2.RIGHT
+		left_bullet.direction = Vector2.UP
 		left_bullet.global_position = left_shooting_point.global_position
 		get_tree().current_scene.add_child(left_bullet)
 
 		#RIGHT BULLET
 		var right_bullet = bullet.instance()
-		right_bullet.direction = Vector2.RIGHT
+		right_bullet.direction = Vector2.UP
 		right_bullet.global_position = right_shooting_point.global_position
 		get_tree().current_scene.add_child(right_bullet)
 
@@ -35,3 +34,6 @@ func _physics_process(delta):
 				int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up")))
 				
 	global_position +=  input_direction.normalized() * SPEED
+	global_position.x = clamp(global_position.x, 0, 480)
+	global_position.y = clamp(global_position.y, 0, 720)
+	

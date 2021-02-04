@@ -42,7 +42,6 @@ func enemy_crashed():
 	hit_player()
 	
 func hit_player():
-	print(health)
 	health -= 1
 	if health == 0:
 		

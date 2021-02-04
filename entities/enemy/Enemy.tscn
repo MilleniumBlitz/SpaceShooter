@@ -7,7 +7,6 @@
 extents = Vector2( 15, 20 )
 
 [node name="Enemy" type="Area2D"]
-rotation = 1.5708
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -22,7 +21,7 @@ wait_time = 0.2
 autostart = true
 
 [node name="ShootingPoint" type="Position2D" parent="."]
-position = Vector2( -1.68352, 47.1433 )
+position = Vector2( 0, 40 )
 [connection signal="area_shape_entered" from="." to="." method="_on_Enemy_area_shape_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_Enemy_body_shape_entered"]
 [connection signal="timeout" from="FireRateTimer" to="." method="_on_FireRateTimer_timeout"]

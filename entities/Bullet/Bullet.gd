@@ -1,7 +1,7 @@
 extends Area2D
 class_name Bullet
 
-var SPEED = 30
+var SPEED = 10
 var direction : Vector2
 
 func _physics_process(delta):

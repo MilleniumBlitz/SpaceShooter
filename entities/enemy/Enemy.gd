@@ -29,14 +29,14 @@ func set_fire_rate(value):
 func _physics_process(delta):
 		
 	# MOVEMENT TO THE LEFT
-	global_position.x -= speed
+	global_position.y += speed
 
 func shoot():
 	shoot_cooldown.start()
 	
 	# SHOOT PROJECTILE
 	var new_bullet = bullet.instance()
-	new_bullet.direction = Vector2.LEFT
+	new_bullet.direction = Vector2.DOWN
 	new_bullet.global_position = shooting_point.global_position
 	get_tree().current_scene.add_child(new_bullet)
 

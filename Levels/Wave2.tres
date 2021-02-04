@@ -1,9 +1,8 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://levels/base/Wave.gd" type="Script" id=1]
-[ext_resource path="res://entities/enemy/2.tres" type="Resource" id=2]
+[ext_resource path="res://entities/enemy/1.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )
-enemy_type = ExtResource( 2 )
-number_of_enemies = 3
+enemies = [ ExtResource( 2 ) ]
