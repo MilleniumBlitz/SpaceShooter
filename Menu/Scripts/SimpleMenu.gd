@@ -9,6 +9,7 @@ export var UNSELECTED_ITEM_OPACITY = 0.3
 export var UNSELECTABLE_ITEM_OPACITY = 0.1
 
 var dead_zone = 0.99
+var no_back = false
 
 signal selected_item
 
@@ -35,21 +36,30 @@ func set_item():
 			items[idx].modulate.a = UNSELECTED_ITEM_OPACITY
 
 func _input(event):
+	
+	# SELECTION HAUT
 	if event.get_action_strength( "ui_up") > dead_zone and !event.is_echo():
 		cur_item -= 1
 		if cur_item < 0: cur_item += items.size()
 		set_item()
 		pass
 		
+	# SELECTION BAS
 	if event.get_action_strength( "ui_down") > dead_zone and !event.is_echo():
 		cur_item += 1
 		if cur_item >= items.size(): cur_item -= items.size()
 		set_item()
 		pass
 		
+	# ACCEPT
 	if event.is_action_pressed( "ui_accept"):
 		_on_item_selected(cur_item)
 		emit_signal( "selected_item", cur_item )
+		
+	# RETOUR BACK
+	if event.is_action_pressed( "ui_cancel") and !no_back:
+		get_tree().change_scene(MenuManager.previous_menu)
+			
 	
 #	if event.is_action_pressed("ui_up"):
 #		cur_item -= 1
@@ -64,4 +74,4 @@ func _input(event):
 #		pass
 
 func _on_item_selected(value):
-	pass
+	MenuManager.previous_menu = self.filename
