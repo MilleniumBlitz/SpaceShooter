@@ -8,6 +8,8 @@ export var SELECTED_ITEM_OPACITY = 1.0
 export var UNSELECTED_ITEM_OPACITY = 0.3
 export var UNSELECTABLE_ITEM_OPACITY = 0.1
 
+var dead_zone = 0.99
+
 signal selected_item
 
 func _ready():
@@ -33,22 +35,33 @@ func set_item():
 			items[idx].modulate.a = UNSELECTED_ITEM_OPACITY
 
 func _input(event):
-	
-	if event.is_action_pressed("ui_up"):
+	if event.get_action_strength( "ui_up") > dead_zone and !event.is_echo():
 		cur_item -= 1
 		if cur_item < 0: cur_item += items.size()
 		set_item()
 		pass
 		
-	elif event.is_action_pressed("ui_down"):
+	if event.get_action_strength( "ui_down") > dead_zone and !event.is_echo():
 		cur_item += 1
 		if cur_item >= items.size(): cur_item -= items.size()
 		set_item()
 		pass
-	if event.is_action_pressed( "ui_select"):
+		
+	if event.is_action_pressed( "ui_accept"):
 		_on_item_selected(cur_item)
 		emit_signal( "selected_item", cur_item )
-
+	
+#	if event.is_action_pressed("ui_up"):
+#		cur_item -= 1
+#		if cur_item < 0: cur_item += items.size()
+#		set_item()
+#		pass
+#
+#	elif event.is_action_pressed("ui_down", false):
+#		cur_item += 1
+#		if cur_item >= items.size(): cur_item -= items.size()
+#		set_item()
+#		pass
 
 func _on_item_selected(value):
 	pass

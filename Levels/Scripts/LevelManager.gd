@@ -5,7 +5,7 @@ extends Node
 #VICTOIRE/DEFAITE
 var current_level
 var level_started = false
-var number_of_ennemies
+var number_of_enemies = 0
 var nbr_dead_enemies = 0
 var enemy_type
 var health = 3
@@ -20,17 +20,21 @@ func start_level(level_number):
 	level_started = false
 	current_level = level_number
 	nbr_dead_enemies = 0
+	number_of_enemies = 0
 	health = 3
 	
 	var level_stats = load("res://levels/level" + str(level_number) + ".tres")
 	if level_stats:
 		waves = level_stats.waves
+		for wave in waves:
+			number_of_enemies += wave.enemies.size()
+		
 		get_tree().change_scene("res://levels/base/BaseLevel.tscn")
 
 func enemy_dead():
 	#UN ENNEMI MEURT OU S"ECHAPPE
 	nbr_dead_enemies += 1
-	if number_of_ennemies == nbr_dead_enemies:
+	if number_of_enemies == nbr_dead_enemies:
 		game_over(true)
 
 func enemy_escaped():

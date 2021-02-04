@@ -36,5 +36,5 @@ __meta__ = {
 }
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 4.0
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_Timer_timeout"]

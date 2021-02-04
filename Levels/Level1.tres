@@ -4,6 +4,8 @@
 [ext_resource path="res://levels/Wave1.tres" type="Resource" id=2]
 [ext_resource path="res://levels/Wave2.tres" type="Resource" id=3]
 
+
+
 [resource]
 script = ExtResource( 1 )
 waves = [ ExtResource( 2 ), ExtResource( 3 ) ]
