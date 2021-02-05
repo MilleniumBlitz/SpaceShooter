@@ -14,7 +14,6 @@ func spawn_wave():
 	curr_wave_index += 1
 
 	if curr_wave_index <= waves.size() -1:
-		print(curr_wave_index)
 		var curr_wave : Wave = waves[curr_wave_index]
 		for i in range(0, curr_wave.enemies.size()):
 					

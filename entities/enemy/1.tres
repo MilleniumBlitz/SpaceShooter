@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource( 1 )
 sprite = ExtResource( 2 )
-speed = 2
+speed = 4
 fire_rate = 1.0

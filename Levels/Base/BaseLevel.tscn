@@ -24,6 +24,7 @@ tracks/0/keys = {
 }
 
 [node name="BaseLevel" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
@@ -41,10 +42,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -19.0
-margin_top = -7.0
-margin_right = 19.0
-margin_bottom = 7.0
+margin_left = -33.0
+margin_top = -9.0
+margin_right = 33.0
+margin_bottom = 9.0
 custom_fonts/font = ExtResource( 6 )
 text = "START"
 __meta__ = {

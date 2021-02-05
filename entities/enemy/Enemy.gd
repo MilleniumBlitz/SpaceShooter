@@ -30,6 +30,9 @@ func _physics_process(delta):
 		
 	# MOVEMENT TO THE LEFT
 	global_position.y += speed
+	if global_position.y == 720:
+		emit_signal("enemy_escaped")
+		destroy()
 
 func shoot():
 	shoot_cooldown.start()
@@ -50,9 +53,6 @@ func _on_Enemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	if area is Bullet:
 		#UNE BALLE DU JOUEUR TOUCHE L'ENNEMI / MORT
 		emit_signal("enemy_dead")
-	elif area is Area2D:
-		#L'ENNEMI S'ECHAPPE
-		emit_signal("enemy_escaped")
 	
 	destroy()
 	
