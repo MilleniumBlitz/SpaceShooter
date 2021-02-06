@@ -1,25 +1,60 @@
 extends Control
 
+
 onready var health_bar_empty = preload("res://sprite/UI/HealthBar/health_empty.png")
 onready var health_bar_full = preload("res://sprite/UI/HealthBar/health_full.png")
 
+var lives setget set_lives
+var max_lives setget set_max_lives
+
 func _ready():
+	lives = LevelManager.health
+	max_lives = LevelManager.max_health
 	
-	#CREATION D'UN NOUVEL EMPLACEMENT DE VIE / ICI LA MAX HEALTH (LE 3 dans range)
+	create_slots()
+	#CREATION DES SLOTS
+	
+		
+	
+		
+func create_slots():
+	for child in get_children():
+		remove_child(child)
+	
 	var position = Vector2(30,30)
-	for i in range(3):
+	for i in range(max_lives):
 		
 		var health_view = Sprite.new()
 		health_view.name = "HealthBar" + str(i)
-		health_view.texture = health_bar_full
 		health_view.position = position
-		add_child(health_view)
-		
+		health_view.texture = health_bar_empty
+			
+		add_child(health_view)		
 		position.x += 16
+		
+	for i in range(lives):
+		var live_slot = get_child(i)
+		if live_slot:
+			live_slot.texture = health_bar_full
+			
+func set_lives(value):
+	lives = value
 	
-	#CONNEXION AU MANAGER DE NIVEAU
-#	LevelManager.connect("health_changed", self, "set_health")
+	for i in range(lives, max_lives):
+		var live_slot = get_child(i)
+		if live_slot:
+			live_slot.texture = health_bar_empty 
+			
+func update_display():
+	for child in get_children():
+		child.texture = health_bar_empty
+		
+	for i in range(lives):
+		var live_slot = get_child(i)
+		if live_slot:
+			live_slot.texture = health_bar_full
+			
 	
-func player_hit(health):
-	var toto = get_child(health)
-	toto.texture = health_bar_empty
+func set_max_lives(value):
+	max_lives = value
+	create_slots()

@@ -6,6 +6,9 @@ var pause_menu
 func _ready():
 	pause_menu = pause.instance()
 	pause_menu.connect("menu_closed", self, "on_pause_menu_closed")
+	
+	LevelManager.connect("health_changed", $CanvasLayer/HealthUI, "set_lives")
+	LevelManager.connect("max_health_changed", $CanvasLayer/HealthUI, "set_max_lives")
 
 
 func _input(event):
@@ -30,4 +33,5 @@ func _on_IntroTimer_timeout():
 	
 	$EnemySpawner.waves = LevelManager.waves
 	$EnemySpawner.start()
-	LevelManager.connect("player_hit", $CanvasLayer/HealthUI, "player_hit")
+#	LevelManager.connect("player_hit", $CanvasLayer/HealthUI, "player_hit")
+	
