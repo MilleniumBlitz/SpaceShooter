@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "Bonus",
+"language": "GDScript",
+"path": "res://entities/bonus/base/Bonus.gd"
+}, {
+"base": "Area2D",
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://entities/bullet/Bullet.gd"
@@ -50,6 +55,7 @@ _global_script_classes=[ {
 "path": "res://levels/base/Wave.gd"
 } ]
 _global_script_class_icons={
+"Bonus": "",
 "Bullet": "",
 "Enemy": "",
 "EnemyType": "",
