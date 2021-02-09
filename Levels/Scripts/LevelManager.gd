@@ -3,7 +3,7 @@ extends Node
 #GERE TOUT ICI CE QUI CONCERNE LE NIVEAU ET LE LES PROCHAINS NIVEAUX A JOUER
 #LE SCORE ?
 #VICTOIRE/DEFAITE
-var current_level
+var current_level_index
 var level_started = false
 var victory = false
 
@@ -11,32 +11,15 @@ var number_of_enemies = 0
 var nbr_dead_enemies = 0
 var waves
 
-#PLAYER
-var health setget set_health
-var max_health 
-signal player_hit(value)
-
-signal health_changed(value)
-signal max_health_changed(value)
-
-func set_health(value):
-	health = value
-	emit_signal("health_changed", health)
-	
-func set_max_health(value):
-	max_health = value
-	emit_signal("max_health_changed", max_health)
-
 func start_level(level_number):
 	level_started = false
-	current_level = level_number
+	current_level_index = level_number
 	nbr_dead_enemies = 0
 	number_of_enemies = 0
 	
-	health = 10
-	max_health = 10
-	emit_signal("health_changed", health)
-	
+	PlayerManager.health = 10
+	PlayerManager.max_health = 10
+		
 	var level_stats = load("res://levels/level" + str(level_number) + ".tres")
 	if level_stats:
 		waves = level_stats.waves
@@ -44,52 +27,39 @@ func start_level(level_number):
 			number_of_enemies += wave.enemies.size()
 		
 		get_tree().change_scene("res://levels/base/BaseLevel.tscn")
-
-func add_life():
-	#Regarder si la max health est = à la health
-	if health == max_health:
-		#Ajouter un slot
-		max_health += 1
-		health += 1
-		emit_signal("health_changed", health)
-		emit_signal("max_health_changed", max_health)
-		
-	else:
-		#Ajouter une vie si il en manque une
-		health += 1
-		emit_signal("health_changed", health)
-		
-		
+				
 func enemy_dead():
-	#UN ENNEMI MEURT OU S"ECHAPPE
+	
+	# UN ENNEMI MEURT
 	nbr_dead_enemies += 1
-	print(nbr_dead_enemies)
 	if number_of_enemies == nbr_dead_enemies:
-		game_over(true)
+		win()
 
 func enemy_escaped():
-	nbr_dead_enemies += 1
-	if number_of_enemies == nbr_dead_enemies:
-		game_over(true)
-	hit_player()
+	
+	enemy_dead()
+	
+	# UN ENNEMI S'ECHAPPE
+#	nbr_dead_enemies += 1
+#	if number_of_enemies == nbr_dead_enemies:
+#		win()
+	PlayerManager.hit_player()
 
 func enemy_crashed():
-	nbr_dead_enemies += 1
-	hit_player()
 	
-func hit_player():
-	health -= 1
-	if health == 0:
-		
-		#LE JOUEUR EST MORT, DEFAITE
-		game_over(false)
-	elif health > 0:
-		#LE JOUEUR EST TOUCHE
-		emit_signal("health_changed", health)
+	enemy_dead()
+	
+	# UN ENNEMI SE CRACH CONTRE LE JOUEUR
+#	nbr_dead_enemies += 1
+	PlayerManager.hit_player()
 
-func game_over(value):
-	victory = value
+func game_over():
+	victory = false
+	get_tree().change_scene("res://menu/end/EndMenu.tscn")
+	
+func win():
+	victory = true
 	get_tree().change_scene("res://menu/end/EndMenu.tscn")
 
 func restart():
-	start_level(current_level)
+	start_level(current_level_index)

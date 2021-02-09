@@ -8,16 +8,14 @@ var lives setget set_lives
 var max_lives setget set_max_lives
 
 func _ready():
-	lives = LevelManager.health
-	max_lives = LevelManager.max_health
+	lives = PlayerManager.health
+	max_lives = PlayerManager.max_health
 	
 	create_slots()
-	#CREATION DES SLOTS
-	
-		
-	
-		
+
+# CREATION DES SLOTS DE VIES
 func create_slots():
+	
 	for child in get_children():
 		remove_child(child)
 	

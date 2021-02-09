@@ -21,7 +21,7 @@ func _on_item_selected(value):
 
 
 		1:
-			MenuManager.previous_menu = ""
+			MenuManager.previous_menu = null
 			get_tree().change_scene("res://menu/selection/SelectionMenu.tscn")
 		2:
 			#QUITTER

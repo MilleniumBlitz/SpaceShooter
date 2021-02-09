@@ -57,7 +57,7 @@ func _input(event):
 		emit_signal( "selected_item", cur_item )
 		
 	# RETOUR BACK
-	if event.is_action_pressed( "ui_cancel") and !no_back:
+	if event.is_action_pressed( "ui_cancel") and !no_back and MenuManager.previous_menu:
 		get_tree().change_scene(MenuManager.previous_menu)
 			
 	

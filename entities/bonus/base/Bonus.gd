@@ -11,4 +11,4 @@ func _on_Bonus_body_entered(body):
 		_on_hit()
 
 func _on_hit():
-	pass
+	queue_free()

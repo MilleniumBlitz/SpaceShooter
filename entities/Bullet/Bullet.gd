@@ -12,6 +12,6 @@ func _on_Bullet_body_entered(body):
 	if body.name == "Player":
 		#LE JOUEUR EST TOUCHE PAR UNE BALLE MAIS PAS DE DOMAGE SPECIFIQUE SUR ELLE MEME
 		#ELLE RETIRE JUSTE UNE VIE AU JOUEUR
-		LevelManager.hit_player()
+		PlayerManager.hit_player()
 	elif body is Area2D:
 		queue_free()

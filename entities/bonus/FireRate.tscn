@@ -9,3 +9,11 @@ script = ExtResource( 1 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="." index="2"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "X2"
+__meta__ = {
+"_edit_use_anchors_": false
+}

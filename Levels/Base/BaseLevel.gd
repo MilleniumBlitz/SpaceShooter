@@ -4,11 +4,15 @@ var pause = preload("res://menu/pause/PauseMenu.tscn")
 var pause_menu
 
 func _ready():
+	
+	#MENU DE PAUSE
 	pause_menu = pause.instance()
 	pause_menu.connect("menu_closed", self, "on_pause_menu_closed")
 	
-	LevelManager.connect("health_changed", $CanvasLayer/HealthUI, "set_lives")
-	LevelManager.connect("max_health_changed", $CanvasLayer/HealthUI, "set_max_lives")
+	#JOUEUR
+	
+	PlayerManager.connect("health_changed", $CanvasLayer/HealthUI, "set_lives")
+	PlayerManager.connect("max_health_changed", $CanvasLayer/HealthUI, "set_max_lives")
 
 
 func _input(event):

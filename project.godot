@@ -76,6 +76,7 @@ config/icon="res://icon.png"
 
 LevelManager="*res://levels/scripts/LevelManager.gd"
 MenuManager="*res://tools/MenuManager.gd"
+PlayerManager="*res://tools/PlayerManager.gd"
 
 [display]
 

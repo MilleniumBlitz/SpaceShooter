@@ -15,11 +15,8 @@ texture = ExtResource( 2 )
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="LeftShooting" type="Position2D" parent="."]
-position = Vector2( 0, -40 )
-
-[node name="RightShooting" type="Position2D" parent="."]
-position = Vector2( 20, -15 )
+[node name="ShootingPoint" type="Position2D" parent="."]
+position = Vector2( 0, -45 )
 
 [node name="FireRateTimer" type="Timer" parent="."]
 wait_time = 0.15
