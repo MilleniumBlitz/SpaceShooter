@@ -7,7 +7,7 @@ func _ready():
 	
 	#INTRO
 	var tween = $IntroTween
-	tween.interpolate_property($CanvasLayer/ColorRect, "color:a", 1, 0, 1, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+	tween.interpolate_property($CanvasLayer/ColorRect, "color:a", 1, 0, 2, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 	tween.start()
 	
 	#MENU DE PAUSE
@@ -26,7 +26,6 @@ func _input(event):
 		get_tree().paused = true
 		set_process_input(false)
 		add_child(pause_menu)
-		set_process_input(false)
 		Engine.time_scale = 0.0
 			
 func on_pause_menu_closed():
@@ -36,10 +35,8 @@ func on_pause_menu_closed():
 	set_process_input(true)
 	Engine.time_scale = 1
 	
-func _on_IntroTimer_timeout():
+func _on_IntroTween_tween_completed(object, key):
 	LevelManager.level_started = true
 	
 	$EnemySpawner.waves = LevelManager.waves
 	$EnemySpawner.start()
-#	LevelManager.connect("player_hit", $CanvasLayer/HealthUI, "player_hit")
-	

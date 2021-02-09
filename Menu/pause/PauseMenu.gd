@@ -17,6 +17,7 @@ func _input(event):
 
 func _on_item_selected(value):
 	._on_item_selected(value)
+	call_deferred("queue_free")
 	match value:
 
 		1:

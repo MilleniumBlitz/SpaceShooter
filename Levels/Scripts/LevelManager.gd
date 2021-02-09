@@ -18,7 +18,7 @@ func start_level(level_number):
 	PlayerManager.health = 10
 	PlayerManager.max_health = 10
 		
-	var level_stats = load("res://levels/level" + str(level_number) + ".tres")
+	var level_stats = load("res://levels/Level" + str(level_number) + ".tres")
 	if level_stats:
 		waves = level_stats.waves
 		for wave in waves:

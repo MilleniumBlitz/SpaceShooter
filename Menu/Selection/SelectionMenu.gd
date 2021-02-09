@@ -8,15 +8,8 @@ func _on_item_selected(value):
 	match value:
 		0:
 			selected_level = 1
-			
-			
-			
-			#DEMARRER NIVEAU 1
-#			LevelManager.start_level(1)
 		1:
 			selected_level = 2
-			#DEMARRER NIVEAU 2
-#			LevelManager.start_level(2)
 
 	#INTRO FONDU
 	var tween = $IntroTween
@@ -24,4 +17,5 @@ func _on_item_selected(value):
 	tween.start()
 
 func _on_IntroTween_tween_completed(object, key):
+#	call_deferred("queue_free")
 	LevelManager.start_level(selected_level)
