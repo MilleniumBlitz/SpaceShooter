@@ -54,6 +54,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 231.609, 635.431 )
 
@@ -73,4 +81,6 @@ position = Vector2( 293.08, 422.597 )
 
 [node name="1Up" parent="." instance=ExtResource( 7 )]
 position = Vector2( 392.557, 450.99 )
+
+[node name="IntroTween" type="Tween" parent="."]
 [connection signal="timeout" from="IntroTimer" to="." method="_on_IntroTimer_timeout"]

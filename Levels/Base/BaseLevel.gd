@@ -5,6 +5,11 @@ var pause_menu
 
 func _ready():
 	
+	#INTRO
+	var tween = $IntroTween
+	tween.interpolate_property($CanvasLayer/ColorRect, "color:a", 1, 0, 1, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+	tween.start()
+	
 	#MENU DE PAUSE
 	pause_menu = pause.instance()
 	pause_menu.connect("menu_closed", self, "on_pause_menu_closed")
