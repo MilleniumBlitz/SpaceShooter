@@ -19,7 +19,6 @@ func _on_item_selected(value):
 	._on_item_selected(value)
 	match value:
 
-
 		1:
 			MenuManager.previous_menu = null
 			get_tree().change_scene("res://menu/selection/SelectionMenu.tscn")

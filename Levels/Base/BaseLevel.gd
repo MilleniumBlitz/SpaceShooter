@@ -10,7 +10,6 @@ func _ready():
 	pause_menu.connect("menu_closed", self, "on_pause_menu_closed")
 	
 	#JOUEUR
-	
 	PlayerManager.connect("health_changed", $CanvasLayer/HealthUI, "set_lives")
 	PlayerManager.connect("max_health_changed", $CanvasLayer/HealthUI, "set_max_lives")
 

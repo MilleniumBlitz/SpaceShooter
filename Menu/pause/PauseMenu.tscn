@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menu/pause/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/MenuTitle.tres" type="DynamicFont" id=2]
 [ext_resource path="res://menu/scripts/SimpleMenuItem.gd" type="Script" id=3]
+[ext_resource path="res://assets/font/MenuItem.tres" type="DynamicFont" id=4]
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -10,7 +11,7 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0862745, 0.0784314, 0.0784314, 0.254902 )
+color = Color( 0.0862745, 0.0784314, 0.0784314, 0.733333 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -36,12 +37,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -33.0
-margin_top = -7.0
-margin_right = 33.0
-margin_bottom = 7.0
+margin_left = -60.5
+margin_top = -9.0
+margin_right = 60.5
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 4 )
 text = "Reprendre"
-align = 1
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -49,13 +50,14 @@ __meta__ = {
 
 [node name="Selection" type="Label" parent="."]
 anchor_left = 0.5
-anchor_top = 0.555556
+anchor_top = 0.552778
 anchor_right = 0.5
-anchor_bottom = 0.555556
-margin_left = -33.0
-margin_top = -7.0
-margin_right = 33.0
-margin_bottom = 7.0
+anchor_bottom = 0.552778
+margin_left = -54.0
+margin_top = -9.0
+margin_right = 54.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 4 )
 text = "Selection"
 align = 1
 script = ExtResource( 3 )
@@ -65,15 +67,15 @@ __meta__ = {
 
 [node name="Quitter" type="Label" parent="."]
 anchor_left = 0.5
-anchor_top = 0.598611
+anchor_top = 0.608333
 anchor_right = 0.5
-anchor_bottom = 0.598611
-margin_left = -33.0
-margin_top = -7.0
-margin_right = 33.0
-margin_bottom = 7.0
+anchor_bottom = 0.608333
+margin_left = -41.5
+margin_top = -9.0
+margin_right = 41.5
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 4 )
 text = "Quitter"
-align = 1
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": true
