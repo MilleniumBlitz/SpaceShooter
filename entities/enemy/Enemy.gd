@@ -10,13 +10,16 @@ var bullet = preload("res://entities/bullet/Bullet.tscn")
 onready var shoot_cooldown = $FireRateTimer
 onready var shooting_point = $ShootingPoint
 
-var speed
+var speed = 1
+
+var can_shoot = false
 
 var sprite setget set_sprite
 var fire_rate setget set_fire_rate
 
 func _ready():
-	shoot()
+	pass
+#	shoot()
 
 func set_sprite(value):
 	sprite = value
@@ -61,4 +64,8 @@ func destroy():
 
 
 func _on_FireRateTimer_timeout():
+	shoot()
+
+
+func _on_VisibilityNotifier2D_screen_entered():
 	shoot()

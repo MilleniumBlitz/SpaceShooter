@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://tools/background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/font/MenuItem.tres" type="DynamicFont" id=2]
+[ext_resource path="res://menu/end/end_menu.gd" type="Script" id=3]
+[ext_resource path="res://menu/scripts/simple_menu_item.gd" type="Script" id=4]
+[ext_resource path="res://assets/font/MenuTitle.tres" type="DynamicFont" id=5]
+
+[node name="EndMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+margin_right = 480.0
+margin_bottom = 720.0
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.302778
+anchor_right = 0.5
+anchor_bottom = 0.302778
+margin_left = -118.5
+margin_top = -17.5
+margin_right = 118.5
+margin_bottom = 17.5
+custom_fonts/font = ExtResource( 5 )
+text = "GAME OVER"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Score" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.375
+anchor_right = 0.5
+anchor_bottom = 0.375
+margin_left = -97.0
+margin_top = -9.0
+margin_right = 97.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 2 )
+text = "SCORE : 123456789"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.580556
+anchor_right = 0.5
+anchor_bottom = 0.580556
+margin_left = -63.0
+margin_top = -9.0
+margin_right = 63.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 2 )
+text = "REDEMARER"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.666667
+anchor_right = 0.5
+anchor_bottom = 0.666667
+margin_left = -45.0
+margin_top = -9.0
+margin_right = 45.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 2 )
+text = "QUITTER"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}

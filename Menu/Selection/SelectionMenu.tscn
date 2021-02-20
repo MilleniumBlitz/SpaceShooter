@@ -1,12 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menu/Selection/SelectionMenu.gd" type="Script" id=1]
-[ext_resource path="res://menu/scripts/SimpleMenuItem.gd" type="Script" id=2]
-[ext_resource path="res://Tools/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menu/scripts/simple_menu_item.gd" type="Script" id=2]
+[ext_resource path="res://Tools/background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Font/MenuItem.tres" type="DynamicFont" id=4]
 
-[node name="SelectionMenu" type="CanvasLayer"]
+[node name="SelectionMenu" type="Control"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 margin_right = 6.10352e-05
@@ -16,10 +19,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -38.0
-margin_top = -9.0
-margin_right = 38.0
-margin_bottom = 9.0
+margin_left = 197.025
+margin_top = 265.668
+margin_right = 273.025
+margin_bottom = 283.668
 custom_fonts/font = ExtResource( 4 )
 text = "LEVEL 1"
 script = ExtResource( 2 )
@@ -32,24 +35,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -41.0
-margin_top = 29.0
-margin_right = 41.0
-margin_bottom = 47.0
+margin_left = 204.408
+margin_top = 363.132
+margin_right = 286.408
+margin_bottom = 381.132
 custom_fonts/font = ExtResource( 4 )
 text = "LEVEL 2"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="IntroTween" type="Tween" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="tween_completed" from="IntroTween" to="." method="_on_IntroTween_tween_completed"]

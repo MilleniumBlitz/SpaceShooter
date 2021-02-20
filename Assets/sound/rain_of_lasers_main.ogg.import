@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rain_of_lasers_main.ogg-dd58f5eba99d53e9597660d570d04c75.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/rain_of_lasers_main.ogg"
+dest_files=[ "res://.import/rain_of_lasers_main.ogg-dd58f5eba99d53e9597660d570d04c75.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

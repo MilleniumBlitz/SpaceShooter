@@ -22,61 +22,56 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://entities/enemy/Enemy.gd"
+"path": "res://entities/enemy/enemy.gd"
 }, {
 "base": "Resource",
 "class": "EnemyType",
 "language": "GDScript",
 "path": "res://entities/enemy/EnemyType.gd"
 }, {
-"base": "Resource",
-"class": "LevelStats",
+"base": "Node2D",
+"class": "Main",
 "language": "GDScript",
-"path": "res://levels/base/LevelStats.gd"
+"path": "res://main/main.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://entities/player/Player.gd"
+"path": "res://entities/player/player.gd"
 }, {
-"base": "CanvasLayer",
+"base": "Control",
 "class": "SimpleMenu",
 "language": "GDScript",
-"path": "res://menu/scripts/SimpleMenu.gd"
+"path": "res://menu/scripts/simple_menu.gd"
 }, {
 "base": "Label",
 "class": "SimpleMenuItem",
 "language": "GDScript",
-"path": "res://menu/scripts/SimpleMenuItem.gd"
-}, {
-"base": "Resource",
-"class": "Wave",
-"language": "GDScript",
-"path": "res://levels/base/Wave.gd"
+"path": "res://menu/scripts/simple_menu_item.gd"
 } ]
 _global_script_class_icons={
 "Bonus": "",
 "Bullet": "",
 "Enemy": "",
 "EnemyType": "",
-"LevelStats": "",
+"Main": "",
 "Player": "",
 "SimpleMenu": "",
-"SimpleMenuItem": "",
-"Wave": ""
+"SimpleMenuItem": ""
 }
 
 [application]
 
 config/name="SpaceShooter"
-run/main_scene="res://menu/Start/StartMenu.tscn"
+run/main_scene="res://main/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-LevelManager="*res://levels/scripts/LevelManager.gd"
-MenuManager="*res://tools/MenuManager.gd"
-PlayerManager="*res://tools/PlayerManager.gd"
+LevelManager="*res://levels/scripts/level_manager.gd"
+MenuManager="*res://tools/menu_manager.gd"
+PlayerManager="*res://tools/player_manager.gd"
+Game="*res://tools/game.gd"
 
 [display]
 
