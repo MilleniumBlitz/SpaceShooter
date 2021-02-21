@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sky_fire_title_screen.ogg-ae903541ccc222ae15a03c23ac7c2ce5.oggstr"
+
+[deps]
+
+source_file="res://Assets/sound/sky_fire_title_screen.ogg"
+dest_files=[ "res://.import/sky_fire_title_screen.ogg-ae903541ccc222ae15a03c23ac7c2ce5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
